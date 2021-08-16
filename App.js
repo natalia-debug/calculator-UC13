@@ -16,6 +16,7 @@ export default function App() {
     const lastNumber = parseFloat(splitNumbers[2])
     const operator = splitNumbers[1]
 
+   
     // Faz ação referente tecla pressionada
     switch(operator){
       case '+':
@@ -30,6 +31,8 @@ export default function App() {
       case '/': 
         setCurrentNumber((fistNumber / lastNumber).toString())
         return
+
+      
          
     }
   }
@@ -42,7 +45,7 @@ export default function App() {
     }
     switch(buttonPressed){
       case 'DEL':
-        setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 2)))
+        setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 1)))
         return
       case 'LIMPAR': // Limpa todo o conteúdo
         setLastNumber("") 
@@ -52,9 +55,10 @@ export default function App() {
         setLastNumber(currentNumber + " = ")
         calculator()
         return
-      case '+/-':
-      
+
+        case '+/-':
         return
+      
     }
 
     setCurrentNumber(currentNumber + buttonPressed)
