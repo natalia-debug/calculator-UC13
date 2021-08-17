@@ -31,6 +31,10 @@ export default function App() {
       case '/': 
         setCurrentNumber((fistNumber / lastNumber).toString())
         return
+      case '%':
+       setCurrentNumber((fistNumber % lastNumber).toString())
+        return
+
 
       
          
@@ -39,7 +43,7 @@ export default function App() {
 
   function handleInput(buttonPressed){
     console.log(buttonPressed) // Mostra no Console a tecla pressionada
-    if(buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "x" | buttonPressed === "/" ){
+    if(buttonPressed === '%' | buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "x" | buttonPressed === "/" ){
       setCurrentNumber(currentNumber + " " + buttonPressed + " ")
       return
     }
@@ -55,7 +59,6 @@ export default function App() {
         setLastNumber(currentNumber + " = ")
         calculator()
         return
-
         case '+/-':
         return
       
@@ -123,8 +126,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    minWidth: 100, 
-    minHeight: 100,
+    minWidth: 90, 
+    minHeight: 90,
     flex: 2,
   },
   textButton: {
